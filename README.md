@@ -5,6 +5,10 @@ An online management tool that allows users to host, generate, and run [assassin
 
 A tradition across many American high schools and colleges, Assassin is a multiplayer, live-action game where players try to “assassinate” their targets and be the last survivor. Players are assigned a “weapon” or method of assassination that they must use to eliminate opponents. Althougth running and managing a game of Assassin is a considerable workload that lends well to automated management, there does not currently exist a good online hosting platform for the game. Our project aims to address this need.
 
+## Project Details
+
+**Team Members:** Hari Dandapani, Calder Hansen, Leyton Ho, Stella Li
+
 ## How to Build and Run
 
 To build the project, run the following command from the root directory:
