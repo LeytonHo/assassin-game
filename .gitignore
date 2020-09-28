@@ -1,0 +1,9 @@
+target/
+.mvn-classpath
+.classpath
+.idea/
+.project
+*.prefs
+*.iml
+data/gameDataTest.sqlite3
+data/loginDataTest.sqlite3
