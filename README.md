@@ -5,18 +5,6 @@ An online management tool that allows users to host, generate, and run [assassin
 
 A tradition across many American high schools and colleges, Assassin is a multiplayer, live-action game where players try to “assassinate” their targets and be the last survivor. Players are assigned a “weapon” or method of assassination that they must use to eliminate opponents. Althougth running and managing a game of Assassin is a considerable workload that lends well to automated management, there does not currently exist a good online hosting platform for the game. Our project aims to address this need.
 
-## Project Details
-
-**Team Members:** Hari Dandapani, Calder Hansen, Leyton Ho, Stella Li
-
-**Mentor TA:** Laura Wilson (laura_wilson@brown.edu)
-
-**Specs, Mockup, and Design Meeting:** _April 2_
-
-**4-Way Checkpoint:** _April 22_
-
-**Adversary Checkpoint:** _April 29_
-
 ## How to Build and Run
 
 To build the project, run the following command from the root directory:
@@ -110,47 +98,3 @@ Alternatively, a live deployed version of this application can be found at https
 * This method of recording kills was based off of prior experiences playing Assassin and we believe reduces potential issues because the target must surrender their own kill code (validating the kill).
 * Killing a team leaves the assassin team, and any other teams that were targeting the killed team, with one fewer target. To replenish the targets, the killed team’s targets are reassigned to all the teams that were targeting it, so that each team that lost a target gains a new target. However, toward the end of the game, teams could end up with repeat targets or self-targets; the target reassignment algorithm chooses the assignment that causes this to happen the least.
 * Once there is only one team left in a game, the game has a winner, and the game will end.
-
-## Testing
-
-### Testing Journal
-
-The front-end functionality of this project was tested by hand-run tests, which can be accessed [here](https://docs.google.com/document/d/1IwRDBh3mxzd_xlPsx9y1bT6rvJlES_4wYfnZjcXaK_A/edit?usp=sharing). 
-
-We created sets of unique, interesting, and convoluted circumstances that would put our code to the test by using all the different features that we implemented. After writing up these scenarios, we ran them in our GUI and noted if the functionality worked as expected. We discovered quite a few bugs this way, and this method proved quite effective in helping us understand where things could go wrong in our code. 
-
-### JUnit Testing
-
-We also use JUnit tests to ensure the quality of our code:
-* Graph Tests:
-    - Tested edge cases including very few players in the game and a game with n players and n-1 targets.
-    - Tested a variety of different game sizes to make sure our algorithm was fast.
-    - Tested numbers of targets not allowed for Assassin (4, 5, 6) to check extensability of the graph generation algorithm.
-* Game Tests:
-    - Tested the getter methods of all five game classes (User, Player, Team, Game, Message), and ensures that when something is added to the database, it can be retrieved correctly.
-    - Tested all game actions (e.g. kill, generate targets) and other methods, to make sure that these changes are reflected in every place they should be.
-    - Tested that game actions return the right errors if something could not be done.
-
-## Known Bugs
-
-The email service used in this project has limits on the number of emails that can be sent, as well as the number of recipients, so emails might not be sent when they should be. We plan to look into using a more robust email service in the future!
-
-## Checkstyle
-
-There are no checkstyle errors.
-
-## User Feedback
-
-We talked to potential users who have played Assassin before and have experience with using a different online platform for the game (which has since been taken down). We generally received very positive feedback! Our potential users liked the simplicity of the interface and thought the features effectively supported operating a game of Assassin. One consistent piece of feedback that we acted on was improved clarity/instructions for using the platform. We didn't want to clutter our design, but we worked to improve our language throughout. 
-
-## Future Work
-
-Future improvements to the project could include:
-* Adding a kill leaderboard for games
-* Supporting rounds (such as 24 hours to kill your target or you are eliminated)
-* Supporting more detailed user profiles
-* Allowing admin to record a kill in the case of a dispute between players
-* Allowing a game to have multiple admin (backend is already set up for it, just need the GUI for adding)
-* Using a more robust email service
-* Improving/adding the password reset feature
-* Improve game account security (e.g., adding client-side encryption)
